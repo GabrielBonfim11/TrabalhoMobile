@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let msg of messages">
+      <ion-col size="9" *ngIf="currentUser !== msg.user" class="message other-message">
+        <ion-title class="title" no-padding>{{msg.user}}</ion-title><br>
+        <span>{{msg.msg}}</span>
+        <div class="time" text-right><br>
+        {{msg.created | date:'short'}}
+        </div>
+      </ion-col>
+
+      <ion-col offset="3" size="9" *ngIf="currentUser === msg.user" class="message my-message">
+          <span>{{msg.msg}}</span>
+          <div class="time" text-right><br>
+          {{msg.created | date:'dd/MM/yyyy hh:mm:ss'}}
+          </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-row align-itens-center no-padding>
+      <ion-col size="10">
+       <textarea autosize [maxRows]="4" [(ngModel)]="newMsg" #inputMsg class="message-input" placeholder="Digite sua resposta aqui"></textarea>
+      </ion-col>
+      <ion-col size="2" class="col-btn">
+          <ion-button (click)="sendMessage()" expand="block" fill="clear" color="primary" [disabled]="newMsg === ''" class="msg-btn">
+            <ion-icon name="send" slot="icon-only"></ion-icon>
+          </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

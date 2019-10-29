@@ -1,0 +1,30 @@
+<ion-content padding class="bg-login" no-scroll>
+    <ion-header text-center no-border>
+
+        <img [src]="logo">
+
+    </ion-header>
+    <ion-item class="padding">
+        <ion-label position="floating" color="light">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="userLogin.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating" color="light">Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="userLogin.password"></ion-input>
+    </ion-item>
+
+
+    <div class="espbotao">
+        <ion-button expand="full" shape="round" color="danger" (click)="login()">Login</ion-button>
+    </div>
+    <p text-center>Esqueceu Sua Senha?</p>
+
+
+    <div class="espbotaocad"> 
+        <p text-center>Ou Cadastre-se</p>
+        <ion-button expand="full" shape="round" color="danger" (click)="cad_c()">Cadastro</ion-button>
+    </div>
+
+
+</ion-content>

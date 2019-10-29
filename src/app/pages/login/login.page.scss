@@ -1,0 +1,93 @@
+.bg-login {
+    --background: url('../../../assets/imagens/bglogin.png') no-repeat center center / cover !important;
+    width: 100%;
+    height: 100%;
+}
+
+//DIMENSOES LOGO
+.logo-login{
+    width: 70%;
+}
+
+//CENTRALIZAR
+.center {
+    text-align: center
+}
+
+//ESPAÇO DO TOPO
+.padding{
+    padding-top: 50px;
+}
+
+//TEXTOS
+.textos{
+    color: white;
+}
+
+//ESPAÇO DO FORMULARIO
+.padding30{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+//BOTÃO LOGIN
+.botaologin{
+    padding: 20px;
+}
+
+//ESPAÇO DO BOTÃO DE LOGIN
+.espbotao{
+    padding-top: 20px;
+}
+
+//ESPAÇO DO BOTÃO DE CADASTRO
+.espbotaocad{
+    padding-top: 180px;
+}
+
+//TAMANHO DOS BOTÕES E CADASTRO
+.botoescad{
+    padding: 10px;
+    background: #b72724;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+}
+
+//ESPAÇAMENTO DOS CADASTROS
+.espcad{
+    padding-top: 10px;
+}
+
+.button-native {
+    border-radius: 50%;
+}
+
+p{
+    color: white;
+}
+
+ion-item {
+    --background :rgba(255,255,255,0.0);
+}
+
+ion-label,ion-input {
+    color: white;
+}
+
+::-webkit-input-placeholder{
+    background-color: #b72724;
+}
+
+//CONFIGURAÇÕES DA LOGOMARCA
+img{
+    padding-top: 30px;
+    width: 80%;
+}
+
+ion-item {
+    --highlight-color-valid: #b72724;
+   
+}
+
+

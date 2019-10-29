@@ -1,0 +1,47 @@
+<ion-content class="bg-login" padding>
+    <ion-header text-center no-border>
+
+        <img [src]="logo">
+
+    </ion-header>
+
+
+    <h2 class="center">Cadastro</h2>
+
+
+    <div>
+        <ion-item>
+            <ion-label position="floating" color="light">Nome</ion-label>
+            <ion-input [(ngModel)]="userRegister.nome" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item class="padding">
+            <ion-label position="floating" color="light">Email</ion-label>
+            <ion-input [(ngModel)]="userRegister.email" type="email"></ion-input>
+        </ion-item>
+
+        <ion-item class="padding">
+            <ion-label position="floating" color="light">Senha</ion-label>
+            <ion-input [(ngModel)]="userRegister.password" type="password"></ion-input>
+        </ion-item>
+
+
+        <ion-item class="padding">
+            <ion-label color="light">Selecione o perfil</ion-label>
+            <ion-select class="padding" placeholder="Selecione" (ionChange)="verificaTipo($event)">
+                <ion-select-option value="c" color="light">Cliente</ion-select-option>
+                <ion-select-option value="p" color="light">Profissional</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+    </div>
+
+    <div *ngIf="tipo=='p'">
+        <h1>Teste</h1>
+    </div>
+
+    <div class="espbotao">
+        <ion-button type="submit" expand="full" shape="round" color="danger" (click)="register()">Cadastrar</ion-button>
+        <p text-center (click)="voltlogin()">Voltar a Página de Login</p>
+    </div>
+</ion-content>

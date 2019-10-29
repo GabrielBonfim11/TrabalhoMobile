@@ -1,0 +1,62 @@
+.bg-login {
+    --background: url('../../../assets/imagens/bglogin.png') no-repeat center center / cover !important;
+    width: 100%;
+    height: 100%;
+}
+
+//ESPAÇO DO TOPO
+.padding{
+    padding-top: 30px;
+}
+
+.espbotao{
+    padding-top: 20px;
+}
+
+.button-native {
+    border-radius: 50%;
+}
+
+p{
+    color: white;
+}
+
+ion-item {
+    --background :rgba(255,255,255,0.0);
+}
+
+ion-label,ion-input {
+    color: white;
+}
+
+::-webkit-input-placeholder{
+    background-color: #b72724;
+}
+
+//CONFIGURAÇÕES DA LOGOMARCA
+img{
+    padding-top: 30px;
+    width: 80%;
+}
+
+//CENTRALIZAR
+.center {
+    text-align: center
+}
+
+h2{
+    color: white;
+
+}
+
+ion-select{
+    color: white;
+    font-weight: bold;
+}
+
+ion-item {
+    --highlight-color-valid: #b72724;
+   
+}
+
+

@@ -1,0 +1,38 @@
+<ion-split-pane>
+  <ion-menu contentId="content">
+
+    <ion-header>
+      <ion-toolbar color="danger">
+
+        <ion-item color="danger">
+          <ion-avatar slot="end">
+            <img src="./avatar.svg">
+          </ion-avatar>
+          <ion-label>
+            <h3>Gabriel Bonfim</h3>
+            <p>dolor sit amet</p>
+          </ion-label>
+        </ion-item>
+
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
+          <ion-item [routerLink]="p.url" routerDirection="root" [class.active.item]="selectedPath === p.url">
+            <ion-icon name={{p.icon}}></ion-icon>
+            <ion-label class="ion-padding-start">
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+    <ion-footer>
+      <ion-button expand="full" (click)="logout()" color="danger">Sair</ion-button>
+    </ion-footer>
+
+  </ion-menu>
+  <ion-router-outlet id="content" main></ion-router-outlet>
+</ion-split-pane>

@@ -1,0 +1,7 @@
+{
+  "name": "autonomus",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

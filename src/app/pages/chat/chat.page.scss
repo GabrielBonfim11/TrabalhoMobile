@@ -1,0 +1,51 @@
+.message{
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    white-space: pre-wrap;
+}
+
+.other-message{
+    background-color: var(--ion-color-tertiary);
+    color: #fff;
+}
+
+.my-message{
+    background-color: var(--ion-color-secondary);
+    color: #fff;
+}
+
+.time{
+    color: #dffd;
+    float: right;
+    font-size: small;
+}
+
+.message-input{
+    width: 100%;
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 10px;
+    background: #fff;
+    resize: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.msg-btn{
+    --padding-start: 0.5em;
+    --padding-end: 0.5em;
+}
+
+.title{
+    color:rgb(9, 70, 65);
+    font-size: 15px;
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.txtcad{
+    padding-top: 80%;
+}
