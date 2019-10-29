@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/interfaces/user';
 import { LoadingController, ToastController, NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
+import { CategoriasService } from '../../services/categorias.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Categoria } from 'src/app/interfaces/categoria';
 
 @Component({
   selector: 'app-cadastro-cliente',
@@ -16,23 +19,30 @@ export class CadastroClientePage implements OnInit {
   private loading: any;
   private tipo: string;
 
+  categorias: Categoria[];
 
   constructor(
     private navCtrl: NavController,
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
-    private authService: AuthService
+    private authService: AuthService,
+    private angularFirestore: AngularFirestore,
+    private categoriasService: CategoriasService
   ) { }
 
   ngOnInit() {
     this.logo = "../../../assets/imagens/logo.png";
+    this.categoriasService.getCategorias().subscribe((categorias) => {
+      this.categorias = categorias;
+      console.log(this.categorias);
+    })
   }
 
-  verificaTipo(event){
+  verificaTipo(event) {
     this.tipo = event.target.value;
   }
 
-  async login(){
+  async login() {
     await this.presentLoading();
 
     try {
@@ -43,12 +53,14 @@ export class CadastroClientePage implements OnInit {
       this.loading.dismiss();
     }
   }
-  
+
   async register() {
     await this.presentLoading();
 
     try {
-      await this.authService.register(this.userRegister);
+      await this.authService.register(this.userRegister).then((angularAuth) => {
+        this.authService.cadastraUsuario(angularAuth.user.uid, this.userRegister);
+      });
     } catch (error) {
       this.presentToast('Cadastro Inválido! Verifique os dados e tente novamente');
     } finally {
@@ -63,12 +75,17 @@ export class CadastroClientePage implements OnInit {
   }
 
   async presentToast(message: string) {
-    const toast = await this.toastCtrl.create({message, duration: 2000});
+    const toast = await this.toastCtrl.create({ message, duration: 2000 });
     toast.present();
   }
 
-  voltlogin(){
+  voltlogin() {
     this.navCtrl.navigateRoot(`login`);
+  }
+
+  selecionaCategoria(event) {
+    console.log(event.target.value);
+    this.userRegister.categoria = event.target.value;
   }
 
 

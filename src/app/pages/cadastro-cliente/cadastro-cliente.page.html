@@ -37,7 +37,12 @@
     </div>
 
     <div *ngIf="tipo=='p'">
-        <h1>Teste</h1>
+        <ion-item>
+            <ion-label color="light">Selecione a categoria</ion-label>
+            <ion-select placeholder="Selecione..." (ionChange)="selecionaCategoria($event)">
+                <ion-select-option *ngFor="let categoria of categorias" [value]="categoria.id" color="light">{{ categoria.nome }}</ion-select-option>
+            </ion-select>
+        </ion-item>
     </div>
 
     <div class="espbotao">

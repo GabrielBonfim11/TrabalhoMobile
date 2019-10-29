@@ -7,9 +7,14 @@
 
     <ion-title>Categorias</ion-title>
 
+    <ion-buttons slot="end">
+      <ion-button icon-only (click)="toggleSearchbar()"><ion-icon name="search"></ion-icon></ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
-  <ion-toolbar>
+  <ion-toolbar *ngIf="searchbar_hidden">
       <ion-searchbar placeholder="Pesquisar por Categoria"
+        (ionBlur)="onBlur($event)"
         [(ngModel)]="queryText"
         (ionInput)="filterCat($event)"
         clearinput>

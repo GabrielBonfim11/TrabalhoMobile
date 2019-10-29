@@ -27,17 +27,17 @@ export class LoginPage implements OnInit {
     this.logo = "../../../assets/imagens/logo.png";
   }
 
-  ionViewWillEnter( ){
+  ionViewWillEnter() {
     this.menu.close();
     this.menu.swipeEnable(false);
   }
 
-  async login(){
+  async login() {
     await this.presentLoading();
 
     try {
       await this.authService.login(this.userLogin);
-      this.navCtrl.navigateRoot('home').then(()=>{
+      this.navCtrl.navigateRoot('home').then(() => {
         this.menu.swipeEnable(true);
       });
     } catch (error) {
@@ -46,7 +46,7 @@ export class LoginPage implements OnInit {
       this.loading.dismiss();
     }
   }
-  
+
 
   async presentLoading() {
     this.loading = await this.loadingCtrl.create({ message: 'Por Favor, Aguarde...' });
@@ -54,11 +54,11 @@ export class LoginPage implements OnInit {
   }
 
   async presentToast(message: string) {
-    const toast = await this.toastCtrl.create({message,duration: 2000});
+    const toast = await this.toastCtrl.create({ message, duration: 2000 });
     toast.present();
   }
-  
-  cad_c(){
+
+  cad_c() {
     this.navCtrl.navigateRoot(`cadastro-cliente`);
   }
 

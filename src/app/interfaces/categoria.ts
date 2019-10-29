@@ -1,3 +1,3 @@
 export interface Categoria {
-    nome: string;
+    nome?: string | void;
 }
